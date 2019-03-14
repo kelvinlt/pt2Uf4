@@ -10,24 +10,18 @@ package joc.numeros;
  * @author x2382383c
  */
 public class jocEndevinaNumero extends joc.joc{
-    int randomNum;
+    int numeroCorrecto;
     
     public jocEndevinaNumero() {
-        super(0, 0, 0);
-    }
-    
-    public jocEndevinaNumero(int randomNum, int vidasRestantes, int vidasInicial, int record) {
-        super(vidasRestantes, vidasInicial, record);
-        this.randomNum = randomNum;
+        super(0);
     }
 
-    public int getRandomNum() {
-        return randomNum;
+    public jocEndevinaNumero(int numeroCorrecto, int vidasInicial) {
+        super(vidasInicial);
+        this.numeroCorrecto = numeroCorrecto;
     }
 
-    public void setRandomNum(int randomNum) {
-        this.randomNum = randomNum;
-    }
+
      
     @Override
     public void juga() {

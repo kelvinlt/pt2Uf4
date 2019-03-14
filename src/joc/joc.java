@@ -14,18 +14,16 @@ public abstract class joc {
     int vidasInicial;
     int record;
 
-    public joc(int vidasRestantes, int vidasInicial, int record) {
-        this.vidasRestantes = vidasRestantes;
-        this.vidasInicial = vidasInicial;
-        this.record = record;
+    public joc(int vidasInicial) { 
+        this.vidasInicial = vidasInicial;    
     }
 
-    public int getVidas() {
+    public int getVidasRestantes() {
         return vidasRestantes;
     }
 
-    public void setVidas(int vidas) {
-        this.vidasRestantes = vidas;
+    public void setVidasRestantes(int vidasRestantes) {
+        this.vidasRestantes = vidasRestantes;
     }
 
     public int getVidasInicial() {
@@ -39,7 +37,6 @@ public abstract class joc {
         else{
             this.vidasInicial = vidasInicial;
         }
-        
     }
 
     public int getRecord() {
@@ -51,11 +48,11 @@ public abstract class joc {
     }
     
     public void mostraVidesRestants(){
-        System.out.println(this.getVidas());
+        System.out.println(this.getVidasRestantes());
     }
     
     public boolean treuVida(){
-        int vidasActual = this.getVidas();
+        int vidasActual = this.getVidasRestantes();
         if(vidasActual <= 0){
             --vidasActual;
             return true;
@@ -67,11 +64,11 @@ public abstract class joc {
     }
     
     public void reiniciaPartida(){
-        this.setVidas(this.getVidasInicial());
+        this.setVidasRestantes(this.getVidasInicial());
     }
     
     public void actualitzaRecord(){
-        int puntuacionActual = 10 - (this.getVidasInicial() - this.getVidas());
+        int puntuacionActual = 10 - (this.getVidasInicial() - this.getVidasRestantes());
         if(puntuacionActual>this.getRecord()){
             System.out.println("NEW RECORD!");
             this.setRecord(puntuacionActual);
