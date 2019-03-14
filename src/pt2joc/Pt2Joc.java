@@ -30,12 +30,16 @@ public class Pt2Joc {
     public static void testEndevinaNumero(){
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
+            System.out.println("---------------------------------------");
             System.out.println("Test de la clase endevinaNumero");
             System.out.println("Escoge las vidas iniciales");
+            System.out.println("---------------------------------------");
             int n = Integer.parseInt(br.readLine());
             jocEndevinaNumero joc1 = new jocEndevinaNumero(numeroRandom010(), n);
             
             joc1.juga();
+            System.out.println("Test finalizado!");
+            System.out.println("---------------------------------");
             
         } catch (Exception e) {
         }

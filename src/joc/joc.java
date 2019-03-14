@@ -71,7 +71,10 @@ public abstract class joc {
     public void actualitzaRecord(){
         int puntuacionActual = 10 - (this.getVidasInicial() - this.getVidasRestantes());
         if(puntuacionActual>this.getRecord()){
+            System.out.println("---------------------------------------");
             System.out.println("NEW RECORD!");
+            System.out.println("El nuevo record es: "+ puntuacionActual);
+            System.out.println("---------------------------------------");
             this.setRecord(puntuacionActual);
         }   
         else{

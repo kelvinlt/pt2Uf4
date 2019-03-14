@@ -23,17 +23,21 @@ public class jocEndevinaNumero extends joc.joc{
         super(vidasInicial);
         this.numeroCorrecto = numeroCorrecto;
     }
-     
+    
+    public boolean validaNumero(int n){
+        return true;
+    }
+    
     @Override
     public void juga() {
         reiniciaPartida();
             
-        
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try { 
             int fuera = 0;
             while(this.getVidasRestantes()>0 || fuera == 0){
-               System.out.println("Escolleis un numero entre 0 i 10");
+                System.out.println("---------------------------------------");
+                System.out.println("Escolleis un numero entre 0 i 10");
                 int n = Integer.parseInt(br.readLine());
                 if(n == numeroCorrecto){
                    System.out.println("Numero Correcto! Felicidades!");
