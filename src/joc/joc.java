@@ -53,8 +53,9 @@ public abstract class joc {
     
     public boolean treuVida(){
         int vidasActual = this.getVidasRestantes();
-        if(vidasActual <= 0){
-            --vidasActual;
+        if(vidasActual > 0){
+            vidasActual=vidasActual-1;
+            this.setVidasRestantes(vidasActual);
             return true;
         }
         else{

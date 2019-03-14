@@ -5,6 +5,9 @@
  */
 package joc.numeros;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  *
  * @author x2382383c
@@ -20,13 +23,38 @@ public class jocEndevinaNumero extends joc.joc{
         super(vidasInicial);
         this.numeroCorrecto = numeroCorrecto;
     }
-
-
      
     @Override
     public void juga() {
         reiniciaPartida();
-        System.out.println("Escolleis un numero entre 0 i 10");
+            
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try { 
+            int fuera = 0;
+            while(this.getVidasRestantes()>0 || fuera == 0){
+               System.out.println("Escolleis un numero entre 0 i 10");
+                int n = Integer.parseInt(br.readLine());
+                if(n == numeroCorrecto){
+                   System.out.println("Numero Correcto! Felicidades!");
+                   actualitzaRecord();
+                   fuera = 1;
+                   this.setVidasRestantes(0);
+                }else{
+                  System.out.println("Numero Incorrecto!");
+                  
+                  if(treuVida()==true){
+                      
+                  }else{
+                      fuera = 1;
+                  }
+                  System.out.println("Numero de vidas restantes: "+this.getVidasRestantes());
+                }   
+            }
+            
+        } catch (Exception e) {
+        }
+        
     }   
 
 }
